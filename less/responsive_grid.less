@@ -1,0 +1,26 @@
+@media print, screen and (max-width: 960px) {
+	@gutter_width:20px;
+	h1, h2, h3, h4, h5, h6, ul, ol,dl, p,blockquote, .image, .captionImage{padding:0 @gutter_width;}
+	
+	.wrapper {
+		width: 720px;
+		margin: 0 auto;
+	}
+	
+}
+
+@media print, screen and (max-width: 720px) {
+	@gutter_width:20px;
+	h1, h2, h3, h4, h5, h6, ul, ol,dl, p,blockquote, .image, .captionImage{padding:0 @gutter_width;}
+	
+  .wrapper, #main, header{
+		.resetgrid;
+	}
+	.wrapper {
+		margin: 0 auto;
+	}
+	.download_links{
+		display: none;
+	}
+
+}

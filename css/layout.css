@@ -823,3 +823,53 @@ footer {
   padding-top: 50px;
   position: relative;
 }
+@media print, screen and (max-width: 960px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  p,
+  blockquote,
+  .image,
+  .captionImage {
+    padding: 0 20px;
+  }
+  .wrapper {
+    width: 720px;
+    margin: 0 auto;
+  }
+}
+@media print, screen and (max-width: 720px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  p,
+  blockquote,
+  .image,
+  .captionImage {
+    padding: 0 20px;
+  }
+  .wrapper,
+  #main,
+  header {
+    display: block;
+    width: auto;
+  }
+  .wrapper {
+    margin: 0 auto;
+  }
+  .download_links {
+    display: none;
+  }
+}
