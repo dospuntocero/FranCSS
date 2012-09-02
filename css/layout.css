@@ -1,0 +1,825 @@
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0pr2
+*/
+/* reset */
+html {
+  color: #000;
+  background: #FFF;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before,
+q:after {
+  content: '';
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+legend {
+  color: #000;
+}
+ol,
+ul {
+  list-style: none;
+}
+/* fonts */
+body {
+  font: 14px/24px arial, helvetica, clean, sans-serif;
+  *font-size: small;
+  *font: x-small;
+}
+select,
+input,
+button,
+textarea {
+  font: 99% arial, helvetica, clean, sans-serif;
+}
+table {
+  font-size: inherit;
+  font: 100%;
+}
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: monospace;
+  *font-size: 108%;
+  line-height: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+.cf {
+  *zoom: 1;
+}
+.cf:before,
+.cf:after {
+  display: table;
+  content: "";
+}
+.cf:after {
+  clear: both;
+}
+.rounded-corners(5px),
+.border-radius(5px) {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+.text_replacement {
+  text-indent: -999em;
+  overflow: hidden;
+}
+.box {
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -ie-border-radius: 5px;
+}
+.cf {
+  display: inline-block;
+  display: block;
+}
+.cf:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
+}
+.text_replacement {
+  text-indent: -999pc;
+}
+/*positioning*/
+.abs {
+  position: absolute;
+}
+.rel {
+  position: relative;
+}
+/*redondeamientos*/
+/*variables*/
+/*colors*/
+@font-face {
+  font-family: 'mainfont';
+  src: url('../fonts/OpenSans-CondLight-webfont.eot');
+  src: url('../fonts/OpenSans-CondLight-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-CondLight-webfont.woff') format('woff'), url('../fonts/OpenSans-CondLight-webfont.ttf') format('truetype'), url('../fonts/OpenSans-CondLight-webfont.svg#OpenSansCondensedLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'osi';
+  src: url('../fonts/OpenSans-CondLightItalic-webfont.eot');
+  src: url('../fonts/OpenSans-CondLightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-CondLightItalic-webfont.woff') format('woff'), url('../fonts/OpenSans-CondLightItalic-webfont.ttf') format('truetype'), url('../fonts/OpenSans-CondLightItalic-webfont.svg#OpenSansCondensedLightItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'osb';
+  src: url('../fonts/OpenSans-CondBold-webfont.eot');
+  src: url('../fonts/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-CondBold-webfont.woff') format('woff'), url('../fonts/OpenSans-CondBold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-CondBold-webfont.svg#OpenSansCondensedBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.bold {
+  font-family: "osb", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.cursiva {
+  font-family: "osi", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.regular {
+  font-family: "osl", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.grid,
+.grid_1,
+.grid_1-2,
+.grid_1-3,
+.grid_2-3,
+.grid_1-4,
+.grid_3-4,
+.grid_1-5,
+.grid_2-5,
+.grid_3-5,
+.grid_4-5,
+.grid_1-6,
+.grid_5-6,
+.grid_1-8,
+.grid_3-8,
+.grid_5-8,
+.grid_7-8,
+.grid_1-12,
+.grid_5-12,
+.grid_7-12,
+.grid_11-12,
+.grid_1-24,
+.grid_5-24,
+.grid_7-24,
+.grid_11-24,
+.grid_13-24,
+.grid_17-24,
+.grid_19-24,
+.grid_23-24 {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /* IE < 8: fake inline-block */
+
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+}
+.grid_1 {
+  display: block;
+}
+.grid_1-2 {
+  width: 50%;
+}
+.grid_1-3 {
+  width: 33.33333%;
+}
+.grid_2-3 {
+  width: 66.66666%;
+}
+.grid_1-4 {
+  width: 25%;
+}
+.grid_3-4 {
+  width: 75%;
+}
+.grid_1-5 {
+  width: 20%;
+}
+.grid_2-5 {
+  width: 40%;
+}
+.grid_3-5 {
+  width: 60%;
+}
+.grid_4-5 {
+  width: 80%;
+}
+.grid_1-6 {
+  width: 16.656%;
+}
+.grid_5-6 {
+  width: 83.33%;
+}
+.grid_1-8 {
+  width: 12.5%;
+}
+.grid_3-8 {
+  width: 37.5%;
+}
+.grid_5-8 {
+  width: 62.5%;
+}
+.grid_7-8 {
+  width: 87.5%;
+}
+.grid_1-12 {
+  width: 8.3333%;
+}
+.grid_5-12 {
+  width: 41.6666%;
+}
+.grid_7-12 {
+  width: 58.3333%;
+}
+.grid_11-12 {
+  width: 91.6666%;
+}
+.grid_1-24 {
+  width: 4.1666%;
+}
+.grid_5-24 {
+  width: 20.8333%;
+}
+.grid_7-24 {
+  width: 29.1666%;
+}
+.grid_11-24 {
+  width: 45.8333%;
+}
+.grid_13-24 {
+  width: 54.1666%;
+}
+.grid_17-24 {
+  width: 70.8333%;
+}
+.grid_19-24 {
+  width: 79.1666%;
+}
+.grid_23-24 {
+  width: 95.8333%;
+}
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  letter-spacing: 0;
+  *letter-spacing: normal;
+  word-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  letter-spacing: -0.31em;
+  /* webkit: collapse white-space between units */
+
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+
+  word-spacing: -0.43em;
+  /* IE < 8 && gecko: collapse white-space between units */
+
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+p,
+blockquote,
+.image,
+.captionImage {
+  padding: 0 50px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  padding-bottom: 0px;
+}
+@font-face {
+  font-family: 'mainfont';
+  src: url('../fonts/OpenSans-CondLight-webfont.eot');
+  src: url('../fonts/OpenSans-CondLight-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-CondLight-webfont.woff') format('woff'), url('../fonts/OpenSans-CondLight-webfont.ttf') format('truetype'), url('../fonts/OpenSans-CondLight-webfont.svg#OpenSansCondensedLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'osi';
+  src: url('../fonts/OpenSans-CondLightItalic-webfont.eot');
+  src: url('../fonts/OpenSans-CondLightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-CondLightItalic-webfont.woff') format('woff'), url('../fonts/OpenSans-CondLightItalic-webfont.ttf') format('truetype'), url('../fonts/OpenSans-CondLightItalic-webfont.svg#OpenSansCondensedLightItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'osb';
+  src: url('../fonts/OpenSans-CondBold-webfont.eot');
+  src: url('../fonts/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-CondBold-webfont.woff') format('woff'), url('../fonts/OpenSans-CondBold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-CondBold-webfont.svg#OpenSansCondensedBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.bold {
+  font-family: "osb", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.cursiva {
+  font-family: "osi", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.regular {
+  font-family: "osl", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+/*variables*/
+/*colors*/
+.typography strong,
+.typography dt {
+  font-weight: bold;
+}
+.typography blockquote,
+.typography ul,
+.typography ol,
+.typography dl {
+  margin: 1em;
+}
+.typography caption {
+  margin-bottom: .5em;
+  text-align: center;
+}
+.typography sup {
+  vertical-align: super;
+}
+.typography sub {
+  vertical-align: sub;
+}
+.typography p,
+.typography fieldset,
+.typography table,
+.typography pre {
+  margin-bottom: 1em;
+}
+.typography p {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: arial, helvetica, sans-serif;
+  color: #555555;
+}
+.typography li {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #555555;
+}
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
+  font-weight: normal;
+  font-family: "osb", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  font-family: "osb", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  margin-bottom: 1em;
+}
+.typography h1 {
+  font-size: 19px;
+  color: #555555;
+}
+.typography h2 {
+  font-size: 17px;
+}
+.typography h3 {
+  font-size: 15px;
+}
+.typography h4 {
+  font-size: 14px;
+}
+.typography h5 {
+  font-size: 13px;
+}
+.typography h6 {
+  font-size: 13px;
+}
+.typography table {
+  width: 100%;
+  margin-bottom: 0.5em;
+  border-top: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+.typography table caption {
+  font-variant: small-caps;
+}
+.typography table.fixed {
+  table-layout: fixed;
+}
+.typography th,
+.typography td {
+  padding: 0.5em;
+}
+.typography th {
+  font-weight: bold;
+  text-align: center;
+}
+.typography thead th {
+  color: #000;
+  border-bottom: 2px solid #ccc;
+}
+.typography tbody th {
+  background: #ccc;
+  color: #333;
+}
+.typography tbody th[scope="row"],
+.typography tbody th.sub {
+  background: #f0f0f0;
+}
+.typography tbody th {
+  border-bottom: 1px solid #fff;
+  text-align: left;
+}
+.typography tbody td {
+  border-bottom: 1px solid #eee;
+}
+.typography tbody tr:hover th[scope="row"],
+.typography tbody tr:hover tbody th.sub {
+  background: #f0e8e8;
+}
+.typography tbody tr:hover td {
+  background: #fff8f8;
+}
+.typography ol,
+.typography ul,
+.typography dl {
+  margin-left: 2em;
+}
+.typography dl dd {
+  margin-left: 1em;
+}
+.typography ol li {
+  list-style: decimal outside;
+}
+.typography ul li {
+  list-style: disc outside;
+}
+.typography ul,
+.typography ol,
+.typography dl {
+  line-height: 1.5em;
+  margin: 0 0 1em 1em;
+}
+.typography ul ul li {
+  list-style-type: circle;
+}
+.typography ol ol li {
+  list-style-type: lower-latin;
+}
+.typography li {
+  margin-left: 0.8em;
+  line-height: 1.5em;
+}
+.typography dt {
+  font-weight: bold;
+}
+.typography dd {
+  margin: 0 0 1em 0.8em;
+}
+.typography blockquote,
+.typography cite,
+.typography q {
+  font-style: italic;
+}
+.typography strong,
+.typography b {
+  font-weight: bold;
+}
+.typography em,
+.typography i {
+  font-style: italic;
+}
+.typography pre,
+.typography code,
+.typography kbd,
+.typography tt,
+.typography samp,
+.typography var {
+  font-size: 100%;
+}
+.typography pre,
+.typography code {
+  color: #800;
+}
+.typography acronym,
+.typography abbr {
+  border-bottom: 1px #aaa dotted;
+  font-variant: small-caps;
+  letter-spacing: .07em;
+  cursor: help;
+}
+.typography sub,
+.typography sup {
+  font-size: 91.6667%;
+}
+.typography hr {
+  color: #fff;
+  background: transparent;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0.5em 0;
+  border: 0;
+  border-bottom: 1px #eee solid;
+}
+.typography .highlight {
+  color: #f60;
+}
+.typography .dimmed {
+  color: #888;
+}
+.typography .info {
+  background: #f8f8f8;
+  color: #666;
+  padding: 10px;
+  margin-bottom: 0.5em;
+  font-size: 91.7%;
+}
+.typography .note {
+  background: #efe;
+  color: #040;
+  border: 2px #484 solid;
+  padding: 10px;
+  margin-bottom: 1em;
+}
+.typography .important {
+  background: #ffe;
+  color: #440;
+  border: 2px #884 solid;
+  padding: 10px;
+  margin-bottom: 1em;
+}
+.typography .warning {
+  background: #fee;
+  color: #400;
+  border: 2px #844 solid;
+  padding: 10px;
+  margin-bottom: 1em;
+}
+.typography a {
+  color: #0000ff;
+  background: transparent;
+  text-decoration: none;
+}
+.typography a:focus,
+.typography a:hover,
+.typography a:active {
+  color: #182E7A;
+  text-decoration: underline;
+}
+.typography div.captionImage {
+  padding: 10px;
+}
+.typography div.captionImage .caption {
+  margin-left: 5px;
+  font-size: 10px;
+}
+.typography div.image.right,
+.typography div.captionImage.right,
+.typography img.right {
+  float: right;
+  margin: 0 0 10px 20px;
+}
+.typography div.image.left,
+.typography div.captionImage.left,
+.typography img.left {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.typography div.image.leftAlone,
+.typography div.captionImage.leftAlone,
+.typography img.leftAlone {
+  float: left;
+  margin-right: 100%;
+}
+.typography div.image.center,
+.typography div.captionImage.center,
+.typography img.center {
+  margin: auto;
+  display: block;
+}
+.typography blockquote {
+  background: #e6e1db url(../images/quote.png) no-repeat 0 center;
+  padding-left: 180px;
+}
+.typography blockquote p {
+  font: italic 20px Trebuchet, "Lucida Grande", Lucida, Verdana, sans-serif;
+  margin: 0;
+}
+.typography p.metadata {
+  color: #666;
+  margin-top: -23px;
+  font-size: 12px;
+}
+body {
+  margin: 20px;
+}
+.wrapper {
+  width: 950px;
+  margin: 0 auto;
+}
+#dospuntocero {
+  width: 50px;
+  right: 0;
+  bottom: 0px;
+  background: url(../images/dospuntocero.png) no-repeat right top;
+  text-indent: -999em;
+  overflow: hidden;
+  text-indent: -999pc;
+  position: absolute;
+}
+header {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /* IE < 8: fake inline-block */
+
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  width: 33.33333333333333%;
+}
+header ul {
+  padding: 0em;
+  margin: 0 50px;
+  list-style: none;
+  height: 40px;
+  background: #eee;
+  border-radius: 5px;
+  border: 1px solid #d2d2d2;
+  box-shadow: inset #ffffff 0 1px 0, inset rgba(0, 0, 0, 0.03) 0 -1px 0;
+  list-style: none;
+}
+header li {
+  width: 70px;
+  float: left;
+  border-right: 1px solid #d2d2d2;
+  height: 40px;
+}
+header li:last-child {
+  border: none;
+}
+header ul a {
+  line-height: 1;
+  font-size: 11px;
+  color: #999;
+  display: block;
+  text-align: center;
+  padding-top: 6px;
+  height: 40px;
+  text-decoration: none;
+}
+header ul a strong {
+  display: block;
+  font-weight: bold;
+  color: #555555;
+}
+#main {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /* IE < 8: fake inline-block */
+
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  width: 66.66666666666666%;
+}
+footer {
+  padding-top: 50px;
+  position: relative;
+}

@@ -1,0 +1,74 @@
+@import "reset.less";
+@import "mixins.less";
+@import "variables.less";
+@import "fonts.less";
+@import "percent_grid.less";
+@import "typography.less";
+
+body{
+	margin: 20px;
+}
+.wrapper {
+	width: @site_width;
+	margin: 0 auto;
+}
+
+#dospuntocero {
+	width: 50px;
+	right: 0;
+	bottom: 0px;
+	background: url(../images/dospuntocero.png) no-repeat right top;
+	.text_replacement;
+	.abs;
+}
+
+header{
+	.grid(1/3);
+	
+	ul {
+		padding: 0em;
+		margin: 0 @gutter_width;
+	  list-style:none;
+	  height:40px;
+	  background: #eee;
+	  border-radius:5px;
+	  border:1px solid #d2d2d2;
+	  box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
+		list-style: none;
+	}
+
+	li {
+		width: 70px;
+	  float:left;
+	  border-right:1px solid #d2d2d2;
+	  height:40px;
+		&:last-child{
+			border: none;
+		}
+	}
+
+	ul a {
+	  line-height:1;
+	  font-size:11px;
+	  color:#999;
+	  display:block;
+	  text-align:center;
+	  padding-top:6px;
+	  height:40px;
+		text-decoration: none;
+		
+		strong{
+			display: block;
+			font-weight: bold;
+			color: @black;
+		}
+	}
+}
+#main{
+	.grid(2/3);	
+}
+
+footer{
+	padding-top: 50px;
+	.rel;
+}
