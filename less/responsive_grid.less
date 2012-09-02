@@ -1,11 +1,25 @@
 @media print, screen and (max-width: 960px) {
 	@gutter_width:20px;
 	h1, h2, h3, h4, h5, h6, ul, ol,dl, p,blockquote, .image, .captionImage{padding:0 @gutter_width;}
+
+	html{
+		background: #eee;
+	}
 	
 	.wrapper {
 		width: 720px;
 		margin: 0 auto;
 	}
+	header{
+		ul.download_links {
+			margin: 0 @gutter_width;
+		}
+
+		li {
+			width: 65px;
+		}
+	}
+
 	
 }
 
@@ -13,6 +27,10 @@
 	@gutter_width:20px;
 	h1, h2, h3, h4, h5, h6, ul, ol,dl, p,blockquote, .image, .captionImage{padding:0 @gutter_width;}
 	
+	html{
+		background: #ccc;
+	}
+
   .wrapper, #main, header{
 		.resetgrid;
 	}

@@ -745,6 +745,13 @@ img {
   margin-top: -23px;
   font-size: 12px;
 }
+html {
+  -webkit-transition: all 0.5;
+  -moz-transition: all 0.5;
+  -ms-transition: all 0.5;
+  -o-transition: all 0.5;
+  transition: all 0.5;
+}
 body {
   margin: 20px;
 }
@@ -773,7 +780,7 @@ header {
   vertical-align: top;
   width: 33.33333333333333%;
 }
-header ul {
+header ul.download_links {
   padding: 0em;
   margin: 0 50px;
   list-style: none;
@@ -839,9 +846,18 @@ footer {
   .captionImage {
     padding: 0 20px;
   }
+  html {
+    background: #eee;
+  }
   .wrapper {
     width: 720px;
     margin: 0 auto;
+  }
+  header ul.download_links {
+    margin: 0 20px;
+  }
+  header li {
+    width: 65px;
   }
 }
 @media print, screen and (max-width: 720px) {
@@ -859,6 +875,9 @@ footer {
   .image,
   .captionImage {
     padding: 0 20px;
+  }
+  html {
+    background: #ccc;
   }
   .wrapper,
   #main,
